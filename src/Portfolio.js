@@ -6,8 +6,8 @@ import personImage from './assets/person1.jpg';
 
 const Navbar = () => (
   <header>
-        
-      </header>
+         
+  </header>
 
 )
 const Header1 = ({ onCollapseClick}) => (
@@ -49,83 +49,37 @@ React.js !
 const Header = ({ onCollapseClick }) => (
    <header id="main-header">
       <div className="row no-gutters">
-         <div className="col-lg-4 col-md-5">
-            <img src={personImage} />
-         </div>
-         <div className="col-lg-8 col-md-7">
+         <div className="col-lg-12 col-md-12">
             <div className="d-flex flex-column">
-               <div className="p-5 bg-dark text-white">
-                  <div className="name d-flex flex-row justify-content-between align-items-center">
-                     <h1 className="display-4">John Doe</h1>
-                     <div>
-                        <i className="fa fa-twitter" />
-                     </div>
-                     <div>
-                        <i className="fa fa-facebook" />
-                     </div>
-                     <div>
-                        <i className="fa fa-instagram" />
-                     </div>
-                     <div>
-                        <i className="fa fa-github" />
-                     </div>
-                  </div>
-               </div>
-               <div className="p-4 bg-black">
-                  Experienced Full Stack Web Developer
-               </div>
                <div>
-                  <div className="d-flex flex-row text-white align-items-stretch text-center">
+                  <div className="d-flex flex-row align-items-stretch text-center">
                      <div
-                        className="port-item p-4 bg-primary"
+                        className="port-item button bg-orange letter p-4"
                         data-toggle="collapse"
                         data-target="#home"
                         onClick={() => onCollapseClick('home')}
-                     >
-                        <i
-                           className="fa fa-home d-block"
-                           onClick={() => onCollapseClick('home')}
-                        />{' '}
-                        Home
+                     ><span>Home</span>{' '}
                      </div>
                      <div
-                        className="port-item p-4 bg-success"
+                        className="port-item bg-orange button letter p-4"
                         data-toggle="collapse"
                         data-target="#resume"
                         onClick={() => onCollapseClick('resume')}
-                     >
-                        <i
-                           data-target="#home"
-                           className="fa fa-graduation-cap d-block"
-                           onClick={() => onCollapseClick('resume')}
-                        />{' '}
-                        Resume
+                     ><span>Resume</span>{' '}
                      </div>
                      <div
-                        className="port-item p-4 bg-warning"
+                        className="port-item bg-orange button letter p-4"
                         data-toggle="collapse"
                         data-target="#work"
                         onClick={() => onCollapseClick('work')}
-                     >
-                        <i
-                           data-target="#work"
-                           className="fa fa-folder-open d-block"
-                           onClick={() => onCollapseClick('work')}
-                        />{' '}
-                        Work
+                     ><span>Work</span>{' '}
                      </div>
                      <div
-                        className="port-item p-4 bg-danger"
+                        className="port-item bg-orange letter button p-4"
                         data-toggle="collapse"
                         data-target="#contact"
                         onClick={() => onCollapseClick('contact')}
-                     >
-                        <i
-                           data-target="#contact"
-                           className="fa fa-envelope d-block"
-                           onClick={() => onCollapseClick('contact')}
-                        />{' '}
-                        Contact
+                     ><span>Contact</span>{' '}
                      </div>
                   </div>
                </div>
@@ -456,6 +410,7 @@ const Footer = () => (
 
 const Portfolio = ({ selectedSection, student }) => (
    <div className="container">
+     <Header/>
      <Navbar />
        <Header1 />
        <Header2 />
