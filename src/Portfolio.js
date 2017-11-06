@@ -4,14 +4,8 @@ import { selectSectionAction } from './actions';
 import './Portfolio.css';
 import personImage from './assets/person1.jpg';
 
-const Navbar = () => (
-  <header>
-         
-  </header>
-
-)
 const Header1 = ({ onCollapseClick}) => (
-    <div className="container1">
+    <div className="container1" id="header1">
         <div className="title">
 Diana María
 </div>
@@ -25,7 +19,7 @@ Diana María
 )
 
 const Header2 = () =>(
-  <div className="content">
+  <div className="content" id="header2">
         <div className="content__container">
           <p className="content__container__text">
             Front-end
@@ -50,14 +44,14 @@ const Header = ({ onCollapseClick }) => (
    <header id="main-header">
       <div className="row no-gutters">
          <div className="col-lg-12 col-md-12">
-            <div className="d-flex flex-column">
+            <div className=" flex-column">
                <div>
                   <div className="d-flex flex-row align-items-stretch text-center">
                      <div
                         className="port-item button bg-orange letter p-4"
                         data-toggle="collapse"
-                        data-target="#home"
-                        onClick={() => onCollapseClick('home')}
+                        data-target="#header1"
+                        onClick={() => onCollapseClick('header1')}
                      ><span>Home</span>{' '}
                      </div>
                      <div
@@ -92,7 +86,7 @@ const Header = ({ onCollapseClick }) => (
 const Home = ({ selectedSection }) => (
    <div
       id="home"
-      className={'collapse ' + (selectedSection == 'home' ? 'show' : 'hide')}
+      className={'collapse ' + (selectedSection == 'header2' ? 'show' : 'hide')}
    >
       <div className="card card-body bg-primary text-white py-5">
          <h2>Welcome to my page</h2>
@@ -280,52 +274,6 @@ const Work = ({ selectedSection }) => (
                </a>
             </div>
          </div>
-         <div className="row no-gutters">
-            <div className="col-md-3">
-               <a
-                  href="https://unsplash.it/1200/768.jpg?image=255"
-                  data-toggle="lightbox"
-               >
-                  <img
-                     src="https://unsplash.it/600.jpg?image=255"
-                     className="img-fluid"
-                  />
-               </a>
-            </div>
-            <div className="col-md-3">
-               <a
-                  href="https://unsplash.it/1200/768.jpg?image=256"
-                  data-toggle="lightbox"
-               >
-                  <img
-                     src="https://unsplash.it/600.jpg?image=256"
-                     className="img-fluid"
-                  />
-               </a>
-            </div>
-            <div className="col-md-3">
-               <a
-                  href="https://unsplash.it/1200/768.jpg?image=257"
-                  data-toggle="lightbox"
-               >
-                  <img
-                     src="https://unsplash.it/600.jpg?image=257"
-                     className="img-fluid"
-                  />
-               </a>
-            </div>
-            <div className="col-md-3">
-               <a
-                  href="https://unsplash.it/1200/768.jpg?image=258"
-                  data-toggle="lightbox"
-               >
-                  <img
-                     src="https://unsplash.it/600.jpg?image=258"
-                     className="img-fluid"
-                  />
-               </a>
-            </div>
-         </div>
       </div>
    </div>
 );
@@ -410,15 +358,13 @@ const Footer = () => (
 
 const Portfolio = ({ selectedSection, student }) => (
    <div className="container">
-     <Header/>
-     <Navbar />
+     <Header onCollapseClick={e => selectSectionAction(e)} />
        <Header1 />
        <Header2 />
-      {/* <Header onCollapseClick={e => selectSectionAction(e)} />
-      <Home selectedSection={selectedSection} />
+      {/* <Home selectedSection={selectedSection} /> */}
       <Resume selectedSection={selectedSection} />
       <Work selectedSection={selectedSection} />
-      <Contact selectedSection={selectedSection} /> */}
+      <Contact selectedSection={selectedSection} />
       {/* <Footer /> */}
    </div>
 );
