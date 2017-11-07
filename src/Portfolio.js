@@ -4,7 +4,7 @@ import { selectSectionAction } from './actions';
 import './Portfolio.css';
 import personImage from './assets/person1.jpg';
 
-const Header1 = ({ onCollapseClick}) => (
+const Header1 = ({ onCollapseClick }) => (
     <div className="container1" id="header1">
         <div className="title">
 Diana María
@@ -18,7 +18,7 @@ Diana María
 
 )
 
-const Header2 = () =>(
+const Header2 = ({ onCollapseClick }) =>(
   <div className="content" id="header2">
         <div className="content__container">
           <p className="content__container__text">
@@ -55,21 +55,21 @@ const Header = ({ onCollapseClick }) => (
                      ><span>Home</span>{' '}
                      </div>
                      <div
-                        className="port-item bg-orange button letter p-4"
+                        className="port-item button bg-orange letter p-4"
                         data-toggle="collapse"
                         data-target="#resume"
                         onClick={() => onCollapseClick('resume')}
                      ><span>Resume</span>{' '}
                      </div>
                      <div
-                        className="port-item bg-orange button letter p-4"
+                        className="port-item button bg-orange letter p-4"
                         data-toggle="collapse"
                         data-target="#work"
                         onClick={() => onCollapseClick('work')}
                      ><span>Work</span>{' '}
                      </div>
                      <div
-                        className="port-item bg-orange letter button p-4"
+                        className="port-item button bg-orange letter p-4"
                         data-toggle="collapse"
                         data-target="#contact"
                         onClick={() => onCollapseClick('contact')}
@@ -86,7 +86,7 @@ const Header = ({ onCollapseClick }) => (
 const Home = ({ selectedSection }) => (
    <div
       id="home"
-      className={'collapse ' + (selectedSection == 'header2' ? 'show' : 'hide')}
+      className={'collapse ' + (selectedSection == 'home' ? 'show' : 'hide')}
    >
       <div className="card card-body bg-primary text-white py-5">
          <h2>Welcome to my page</h2>
