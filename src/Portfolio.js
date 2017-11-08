@@ -4,49 +4,13 @@ import { selectSectionAction } from './actions';
 import './Portfolio.css';
 import personImage from './assets/person1.jpg';
 
-const Header1 = ({ onCollapseClick }) => (
-    <div className="container1" id="header1">
-        <div className="title">
-Diana María
-</div>
-        <br />
-        <div className="title">Silva</div>
-        <br />
-<br />
-        {/* <div className="subtitle"> FRONT-END DEVELOPER JS - REACT - CSS - HTML - JQUERY </div> */}
-      </div>
-
-)
-
-const Header2 = ({ onCollapseClick }) =>(
-  <div className="content" id="header2">
-        <div className="content__container">
-          <p className="content__container__text">
-            Front-end
-          </p>
-          <ul className="content__container__list">
-            <li className="content__container__list__item">developer!</li>
-            <li className="content__container__list__item">
-Javascript !
-</li>
-            <li className="content__container__list__item">
-React.js !
-</li>
-            <li className="content__container__list__item"> html - css</li>
-          </ul>
-        </div>
-      </div>
-
-)
-
-
 const Header = ({ onCollapseClick }) => (
    <header id="main-header">
       <div className="row no-gutters">
          <div className="col-lg-12 col-md-12">
             <div className=" flex-column">
                <div>
-                  <div className="d-flex flex-row align-items-stretch text-center">
+                  <div className="d-flex flex-row text-center">
                      <div
                         className="port-item button bg-orange letter p-4"
                         data-toggle="collapse"
@@ -82,6 +46,40 @@ const Header = ({ onCollapseClick }) => (
       </div>
    </header>
 );
+
+const Header1 = ({ selectedSection }) => (
+  <div id="header1" className={'collapse ' + (selectedSection == 'header1' ? 'show' : 'hide')}>
+      <div className="title">
+Diana María
+</div>
+      <br />
+      <div className="title">Silva</div>
+      <br />
+<br />
+      {/* <div className="subtitle"> FRONT-END DEVELOPER JS - REACT - CSS - HTML - JQUERY </div> */}
+    </div>
+
+)
+
+const Header2 = ({ onCollapseClick }) =>(
+<div className="content" id="header2">
+      <div className="content__container">
+        <p className="content__container__text">
+          Front-end
+        </p>
+        <ul className="content__container__list">
+          <li className="content__container__list__item">developer!</li>
+          <li className="content__container__list__item">
+Javascript !
+</li>
+          <li className="content__container__list__item">
+React.js !
+</li>
+          <li className="content__container__list__item"> html - css</li>
+        </ul>
+      </div>
+    </div>
+)
 
 const Home = ({ selectedSection }) => (
    <div
@@ -359,7 +357,7 @@ const Footer = () => (
 const Portfolio = ({ selectedSection, student }) => (
    <div className="container">
      <Header onCollapseClick={e => selectSectionAction(e)} />
-       <Header1 />
+       <Header1 selectedSection={selectedSection}/>
        <Header2 />
       {/* <Home selectedSection={selectedSection} /> */}
       <Resume selectedSection={selectedSection} />
