@@ -178,7 +178,7 @@ const Resume = ({ selectedSection }) => (
                      Position: Front End Developer
                   </p>
                   <p className="p-2 mb-3 bg-dark text-white">
-                     Phone: (333) 333-3333
+                     Phone: 953728070
                   </p>
                </div>
                <div className="card-footer">
@@ -281,64 +281,43 @@ const Contact = ({ selectedSection }) => (
       id="contact"
       className={'collapse ' + (selectedSection == 'contact' ? 'show' : 'hide')}
    >
-      <div className="card card-body bg-danger text-white py-5">
-         <h2>Contact</h2>
-         <p>
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-            Exercitationem, dignissimos?
-         </p>
-      </div>
-      <div className="card card-body py-5">
-         <h3>Get in touch</h3>
-         <p>
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laborum,
-            autem.
-         </p>
-         <form>
-            <div className="form-group">
-               <div className="input-group input-group-lg">
-                  <span className="input-group-addon bg-danger text-white">
-                     <i className="fa fa-user" />
-                  </span>
-                  <input
-                     type="text"
-                     className="form-control bg-dark text-white"
-                     placeholder="Name"
-                  />
-               </div>
-            </div>
-            <div className="form-group">
-               <div className="input-group input-group-lg">
-                  <span className="input-group-addon bg-danger text-white">
-                     <i className="fa fa-envelope" />
-                  </span>
-                  <input
-                     type="email"
-                     className="form-control bg-dark text-white"
-                     placeholder="Email"
-                  />
-               </div>
-            </div>
-            <div className="form-group">
-               <div className="input-group input-group-lg">
-                  <span className="input-group-addon bg-danger text-white">
-                     <i className="fa fa-pencil" />
-                  </span>
-                  <textarea
-                     rows={5}
-                     className="form-control bg-dark text-white"
-                     placeholder="Message"
-                     defaultValue={''}
-                  />
-               </div>
-            </div>
+   <section id="hire">
+        <h1>
+Contact Me
+</h1>
+        <form>
+          <div className="field name-box">
             <input
-               type="submit"
-               defaultValue="Submit"
-               className="btn btn-danger btn-block btn-lg"
-            />
-         </form>
-      </div>
+type="text"
+id="name"
+placeholder="Who Are You?" />
+            <label htmlFor="name">Name</label>
+            <span className="ss-icon">check</span>
+          </div>
+          <div className="field email-box">
+            <input
+type="text"
+id="email"
+placeholder="name@email.com" />
+            <label htmlFor="email">Email</label>
+            <span className="ss-icon">check</span>
+          </div>
+          <div className="field msg-box">
+            <textarea
+id="msg"
+rows={4}
+placeholder="Your message goes here..."
+defaultValue={""} />
+            <label htmlFor="msg">Msg</label>
+            <span className="ss-icon">check</span>
+          </div>
+          <input
+className="button"
+type="submit"
+defaultValue="Send" />
+        </form>
+      </section>
+
    </div>
 );
 
