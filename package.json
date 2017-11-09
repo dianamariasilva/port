@@ -2,6 +2,7 @@
   "name": "portfolio-react-redux",
   "version": "0.1.0",
   "private": true,
+  "homepage":"https://dianamariasilva.github.io/port",
   "dependencies": {
     "react": "^16.0.0",
     "react-dom": "^16.0.0",
